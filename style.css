@@ -1,601 +1,481 @@
 /** @format */
+/* =============================================
+   TAX INVOICE – Professional A4 Layout
+   A&S Engineering Services
+   ============================================= */
 
-Users/lavkushkumardubey/HTML TUTORIAL/invoice2/style.css */ body {
-  font-family: Arial, sans-serif;
-  margin: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  background: #e8eaf0;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 40px;
 }
 
+/* ─── Page / A4 Container ─── */
 .invoice-container {
-  border: 3px solid #000;
-  padding: 4px;
-  max-width: 800px;
-
-  margin: 0 auto;
+  width: 210mm;
+  min-height: 297mm;
+  background: #fff;
+  border: 1px solid #bbb;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  padding: 10mm 12mm 10mm 12mm;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  background-color: transparent;
 }
 
-h1 {
-  color: rgb(13, 94, 186);
-  margin-right: 20px;
-}
-
+/* ─── Header ─── */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #000;
-  padding-bottom: 0px;
-  background-color: transparent;
-  color: rgb(10, 10, 10);
+  border-bottom: 3px solid #0d3b7a;
+  padding-bottom: 8px;
+  margin-bottom: 6px;
+  gap: 12px;
 }
 
 #logo {
-
-
-  mix-blend-mode: color-burn;
-  display: flex;
-  align-items: left;
-  margin-left: 0px;
+  height: 56px;
+  width: auto;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
 }
 
 .company-info {
+  flex: 1;
   text-align: center;
-  display: block;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3px;
-  margin-right: 10px;
 }
 
+.company-info h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d3b7a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.company-info p {
+  font-size: 11px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── TAX INVOICE Title Band ─── */
 .quotation {
+  background: #0d3b7a;
+  color: #fff;
   text-align: center;
-  margin: 0px 0;
-
+  padding: 5px 0;
+  margin: 6px 0;
 }
 
+#h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#quotation_bottum_line { display: none; }
+
+/* ─── Ref / Date Row ─── */
 .quotation-info {
   display: flex;
   justify-content: space-between;
-  margin-top: 0px;
+  align-items: center;
+  padding: 5px 2px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
+.quotation-info input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #111;
+}
+
+#date {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+#ref {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* ─── Customer Info ─── */
 .customer-info {
-  margin: 4px 0;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  background: #f9fafc;
 }
 
+#customer-info {
+  width: 100%;
+  height: 68px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  color: #222;
+}
+
+/* ─── Items Table ─── */
 .quotation-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0px 0;
+  margin-bottom: 0;
+  font-size: 12px;
 }
 
-.quotation-table th,
-.quotation-table td {
-  border: 1px solid #000;
-  padding: 8px;
-  text-align: left;
+.quotation-table thead tr {
+  background: #0d3b7a;
+  color: #fff;
 }
+
+.quotation-table th {
+  border: 1px solid #0d3b7a;
+  padding: 7px 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.quotation-table td {
+  border: 1px solid #bbb;
+  padding: 6px 8px;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.quotation-table tbody tr:nth-child(even) {
+  background: #f4f7fb;
+}
+
+.quotation-table td:nth-child(1) { text-align: center; width: 36px; }
+.quotation-table td:nth-child(3) { text-align: center; width: 70px; }
+.quotation-table td:nth-child(4) { text-align: center; width: 44px; }
+.quotation-table td:nth-child(5) { text-align: right; width: 80px; }
+.quotation-table td:nth-child(6) { text-align: right; width: 80px; }
+.totalAmount { font-weight: 600; }
 
 .quotation-table input {
   width: 100%;
   border: none;
   outline: none;
-  box-sizing: border-box;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
 }
 
+/* ─── Action Buttons ─── */
+.button-container {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+#btns {
+  height: 34px;
+  padding: 0 16px;
+  background: #0d3b7a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s;
+}
+
+#btns:hover {
+  background: #1756b3;
+}
+
+/* ─── Totals Section ─── */
 .totals {
-  text-align: right;
-  margin: 20px 0;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #bbb;
+  margin-bottom: 0;
 }
 
-.in-words {
-  margin: 0px 0;
-  font-weight: bold;
+.warranty {
+  flex: 1.2;
+  padding: 8px;
+  border-right: 1.5px solid #bbb;
+  min-height: 110px;
+}
+
+#Warranty {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  color: #333;
+  line-height: 1.5;
+}
+
+.amounts {
+  flex: 0.8;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.amounts p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 2px 0;
+  gap: 8px;
+}
+
+#sub {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: pre;
+}
+
+#subTotal {
+  font-weight: 700;
+}
+
+.GST {
+  background: transparent;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  width: 44px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 1px 3px;
+}
+
+#grand_total {
+  border: none;
+  border-top: 2px solid #0d3b7a;
+  margin: 4px 0;
+}
+
+.amounts p:last-child {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0d3b7a;
+}
+
+/* ─── Signature Row ─── */
+.signature-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border: 1px solid #bbb;
+  border-top: none;
+  padding: 8px 12px;
 }
 
 .signature {
   text-align: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: inline-block;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0px;
-}
-
-.terms {
-  width: 70%;
-}
-
-#customer-info {
-  width: 100%;
-  margin-top: 0;
-  height: 70px;
-  border: transparent;
-  background-color: transparent;
-}
-
-#date {
-  border: transparent;
-  background-color: eeeee;
-}
-
-#print-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.signature p {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 #singh {
-  height: 50px;
-  width: 150px;
-}
-
-/* Additional CSS for smaller CGST and SGST input fields */
-.totals input[type="number"] {
-  width: 40px;
-
-  height: 20px;
-}
-
-@media print {
-
-  .print-btn,
-  .add-row-btn,
-  .remove-row-btn {
-    display: none;
-  }
-
-  .totals input[type="number"] {
-    border: none;
-
-    text-align: right;
-  }
-}
-
-.totals {
-  background-color: transparent;
+  height: 46px;
+  width: 140px;
   display: block;
-  border-style: solid;
-  border-color: #000;
-  border-radius: 1px;
-  border-width: 1px;
-}
-
-#grandtotal {
-  border-style: solid;
-  border-color: #000;
-}
-
-#footer_line {
-  border-style: solid;
-  border-color: #000;
-  margin-top: 0px;
-  box-sizing: border-box;
-}
-
-.terms {
-  color: red;
-  background-color: transparent;
-}
-
-#list_point_eight {
-  color: black;
-  background-color: transparent;
-  font-weight: 700;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-
-
-#quotation_bottum_line {
-  border-width: 0.5px;
-  border-color: #2e2d2d;
-  margin-top: 0px;
-}
-
-#h2 {
-  color: rgb(10, 77, 85);
-  font-size: larger;
-  font-weight: bold;
-}
-
-#grand_total {
-  border-style: dashed;
-}
-
-.GST {
-  background-color: transparent;
+  margin-top: 4px;
 }
 
 #gst_no {
-  background-color: transparent;
-  margin-top: 0px;
-  margin-bottom: 50px;
-
-  display: inline-block;
-  
+  text-align: right;
 }
 
-#subTotal {
+#gst_no p {
+  font-size: 11.5px;
   font-weight: 600;
+  line-height: 1.7;
 }
 
-#sub {
-  font-weight: 200;
-  font-family: Arial, Helvetica, sans-serif;
-
+/* ─── Footer Line ─── */
+#footer_line {
+  border: none;
+  border-top: 2.5px solid #0d3b7a;
+  margin: 8px 0 4px;
 }
 
-#terms {
-  display: inline-block;
-}
-
-#Termscoditons {
-  color: rgb(160, 63, 138);
-}
-
-h4 {
-  text-decoration: underline;
-}
-
-#ref {
-  border-color: transparent;
-  font-weight: 500;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
-
-#Warranty {
-  border-bottom-color: black;
-  font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-  height: 100%;
-  border-width: 0 0 0.0px 0;
-  font-size: 17px;
-
-}
-
-.warranty {
-  background-color: transparent;
-  height: 170px;
-  width: 300px;
-
-}
-#btns{
-  height: 40px;
-  width: 100px;
-  background-color: wheat;
-  border-color: transparent;
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #000;
-  font-weight: 600;
-
-  
-}
-#btns:hover{
-  background-color: rgb(240, 240, 159);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-  color: blue;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); 
-}
-
-
-
-
-/* HTML CSS CODE */
-
-
-
-
-
-.header {
-  text-align: center;
-  /* Center align header content */
-  margin-bottom: 0px;
-  display: flex;
-  align-items: center;
-  /* Align items to center */
-  position: relative;
-  /* Add positioning context */
-  /* Maintain height for header */
-  line-height: 1.;
-  /* Improve text alignment with logo */
-}
-
-.company-info {
-  flex: 1;
-  text-align: center;
-  /* Center align company information */
-}
-
-#logo {
-  position: absolute;
-  /* Set logo to absolute position */
-  left: 0px;
-  /* Give some margin from the left edge */
-  top: 17%;
-  /* Position logo at vertical center */
-  transform: translateY(-50%);
-  /* For proper vertical centering */
-  height: 40px;
-  /* Maintain current logo size */
-  width: auto;
-  /* Maintain aspect ratio */
-  vertical-align: left;
-  /* Ensure proper text alignment */
-}
-
-.company-info h1 {
-  margin: 0 auto;
-  /* Center the heading */
-  display: block;
-  /* Change from inline-block to block */
-  font-size: 27px;
-  /* Increase font size further */
-  text-align: center;
-  margin-bottom: 5px;
-  /* Add a bit of space below the heading */
-}
-
-.company-info p {
-  margin: 5px;
-  /* Remove margin from paragraphs */
-  text-align: center;
-  /* Center align paragraphs */
-}
-
-.button-container {
+/* ─── Terms & Conditions ─── */
+.footer {
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
-  margin-top: 5px;
-
- 
-}
-
-.signature-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0;
-  /* Minimize top gap between signature and GST number */
-}
-
-#gst_no {
-  margin-top: 0;
-  /* Minimize top gap between GST number and signature div */
-}
-
-textarea {
-  overflow: hidden;
-  resize: none;
-}
-
-.terms ol {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-  /* Minimize gaps between lines */
-  padding-left: 20px;
-  /* Adjust padding for list items */
-}
-
-.terms li {
-  margin-bottom: 5px;
-  /* Minimize gaps between list items */
-}
-
-.totals {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: 0;
-}
-
-.totals .warranty {
-  flex: 1;
-  text-align: left;
-}
-
-.totals .amounts {
-  flex: 1;
-  text-align: right;
-  border-style: solid;
-  border-color: black;
-  border-width: 0px 0px 0px 1.5px;
-}
-
-.dotted-line {
-  border-top: 1px dotted #000;
-  width: 100%;
-  margin: 10px 0;
-}
-
-.full-length-line {
-  border-top: 1px solid #000;
-  width: 100%;
-  margin: 10px 0;
-}
-
-.centered-footer {
-  text-align: center;
-  border-top: 1px solid #000;
-  padding-top: 10px;
-  margin-top: 20px;
-}
-
-h2 {
-  margin: 5px 0;
-  /* Minimize gaps between lines */
-}
-
-.footer {
-  margin: 0;
-  /* Remove gap between footer and terms */
+  margin-top: 4px;
 }
 
 #Termscoditons {
-  margin: 0;
-  /* Remove gap between terms and conditions */
+  padding-left: 16px;
+  color: #c0392b;
 }
 
 #Termscoditons h4 {
-  margin-top: 0;
-  /* Remove gap between h5 heading and upper line */
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 3px;
+  color: #c0392b;
+  letter-spacing: 0.3px;
 }
 
-.totals,
-.signature-container {
-  margin-bottom: 0;
-  /* Remove gap between totals and signature container */
+#Termscoditons li {
+  font-size: 10.5px;
+  color: #c0392b;
+  margin-bottom: 2px;
+  line-height: 1.45;
 }
 
-.warranty textarea {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  resize: none;
+/* ─── Payment Footer ─── */
+.centered-footer {
+  text-align: center;
+  border-top: 1px solid #0d3b7a;
+  padding-top: 6px;
+  margin-top: 8px;
 }
 
-/* Responsive styles for mobile devices */
-@media screen and (max-width: 768px) {
+#list_point_eight {
+  font-size: 11px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.6;
+  list-style: none;
+}
+
+/* ─── Misc ─── */
+h4 { text-decoration: underline; }
+
+textarea { overflow: hidden; resize: none; }
+
+/* ─── PRINT STYLES ─── */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
   .invoice-container {
-    padding: 2px;
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .header {
-    flex-direction: column;
-    padding-left: 0;
     min-height: auto;
-    text-align: center;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
   }
-  
-  #logo {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin: 10px auto;
-    max-height: 60px;
+
+  .button-container { display: none !important; }
+
+  #btns { display: none !important; }
+
+  .GST {
+    border: none;
+    font-weight: 700;
   }
-  
-  .company-info {
-    padding: 0 5px;
+
+  .quotation-table input { background: transparent; }
+
+  #customer-info, #Warranty { background: transparent; }
+
+  /* Force background colors for print */
+  .quotation-table thead tr {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #0d3b7a !important;
+    color: #fff !important;
   }
-  
-  .company-info h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
+
+  .quotation {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #0d3b7a !important;
+    color: #fff !important;
   }
-  
-  .company-info p {
-    font-size: 12px;
-    margin: 2px;
-  }
-  
-  .quotation-info {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .quotation-table {
-    font-size: 12px;
-  }
-  
-  .quotation-table th,
-  .quotation-table td {
-    padding: 4px;
-  }
-  
-  /* Make the table responsive */
-  .quotation-table th:nth-child(3),
-  .quotation-table td:nth-child(3) {
-    display: none; /* Hide HSN CODE column on mobile */
-  }
-  
-  #qty, #unitPrice, 
-  .quotation-table th:nth-child(4),
-  .quotation-table th:nth-child(5),
-  .quotation-table td:nth-child(4),
-  .quotation-table td:nth-child(5) {
-    width: 50px; /* Make quantity and price columns narrower */
-  }
-  
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #btns {
-    margin: 5px 0;
-    width: 100%;
-    max-width: 200px;
-  }
-  
-  .totals {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .warranty, .amounts {
-    width: 100%;
-  }
-  
-  .signature-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .signature, #gst_no {
-    text-align: center;
-    width: 100%;
-  }
-  
-  #Termscoditons {
-    padding-left: 20px;
-  }
-  
-  #Termscoditons li {
-    margin-bottom: 5px;
-    font-size: 12px;
-  }
-  
-  .centered-footer {
-    font-size: 12px;
-    text-align: center;
+
+  .quotation-table tbody tr:nth-child(even) {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #f4f7fb !important;
   }
 }
 
-/* Even smaller screens */
-@media screen and (max-width: 480px) {
-  .company-info h1 {
-    font-size: 18px;
+/* ─── Responsive (screen only) ─── */
+@media screen and (max-width: 820px) {
+  body { padding: 8px 0 24px; }
+
+  .invoice-container {
+    width: 100%;
+    min-height: auto;
+    padding: 8px;
+    box-shadow: none;
+    border: 1px solid #ccc;
   }
-  
-  .company-info p {
-    font-size: 10px;
-  }
-  
-  .quotation-table {
-    font-size: 10px;
-  }
-  
-  .quotation-table th,
-  .quotation-table td {
-    padding: 2px;
-  }
+
+  .company-info h1 { font-size: 16px; }
+  .company-info p { font-size: 10px; }
+  .quotation-table { font-size: 10px; }
+  .quotation-table th, .quotation-table td { padding: 4px 5px; }
+
+  .totals { flex-direction: column; }
+  .warranty { border-right: none; border-bottom: 1.5px solid #bbb; }
+
+  .signature-container { flex-direction: column; gap: 10px; }
+  #gst_no { text-align: left; }
 }
