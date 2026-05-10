@@ -1,0 +1,601 @@
+/** @format */
+
+Users/lavkushkumardubey/HTML TUTORIAL/invoice2/style.css */ body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+}
+
+.invoice-container {
+  border: 3px solid #000;
+  padding: 4px;
+  max-width: 800px;
+
+  margin: 0 auto;
+  position: relative;
+  background-color: transparent;
+}
+
+h1 {
+  color: rgb(13, 94, 186);
+  margin-right: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0px;
+  background-color: transparent;
+  color: rgb(10, 10, 10);
+}
+
+#logo {
+
+
+  mix-blend-mode: color-burn;
+  display: flex;
+  align-items: left;
+  margin-left: 0px;
+}
+
+.company-info {
+  text-align: center;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3px;
+  margin-right: 10px;
+}
+
+.quotation {
+  text-align: center;
+  margin: 0px 0;
+
+}
+
+.quotation-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.customer-info {
+  margin: 4px 0;
+}
+
+.quotation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0px 0;
+}
+
+.quotation-table th,
+.quotation-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+
+.quotation-table input {
+  width: 100%;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.totals {
+  text-align: right;
+  margin: 20px 0;
+}
+
+.in-words {
+  margin: 0px 0;
+  font-weight: bold;
+}
+
+.signature {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.terms {
+  width: 70%;
+}
+
+#customer-info {
+  width: 100%;
+  margin-top: 0;
+  height: 70px;
+  border: transparent;
+  background-color: transparent;
+}
+
+#date {
+  border: transparent;
+  background-color: eeeee;
+}
+
+#print-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#singh {
+  height: 50px;
+  width: 150px;
+}
+
+/* Additional CSS for smaller CGST and SGST input fields */
+.totals input[type="number"] {
+  width: 40px;
+
+  height: 20px;
+}
+
+@media print {
+
+  .print-btn,
+  .add-row-btn,
+  .remove-row-btn {
+    display: none;
+  }
+
+  .totals input[type="number"] {
+    border: none;
+
+    text-align: right;
+  }
+}
+
+.totals {
+  background-color: transparent;
+  display: block;
+  border-style: solid;
+  border-color: #000;
+  border-radius: 1px;
+  border-width: 1px;
+}
+
+#grandtotal {
+  border-style: solid;
+  border-color: #000;
+}
+
+#footer_line {
+  border-style: solid;
+  border-color: #000;
+  margin-top: 0px;
+  box-sizing: border-box;
+}
+
+.terms {
+  color: red;
+  background-color: transparent;
+}
+
+#list_point_eight {
+  color: black;
+  background-color: transparent;
+  font-weight: 700;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+
+
+#quotation_bottum_line {
+  border-width: 0.5px;
+  border-color: #2e2d2d;
+  margin-top: 0px;
+}
+
+#h2 {
+  color: rgb(10, 77, 85);
+  font-size: larger;
+  font-weight: bold;
+}
+
+#grand_total {
+  border-style: dashed;
+}
+
+.GST {
+  background-color: transparent;
+}
+
+#gst_no {
+  background-color: transparent;
+  margin-top: 0px;
+  margin-bottom: 50px;
+
+  display: inline-block;
+  
+}
+
+#subTotal {
+  font-weight: 600;
+}
+
+#sub {
+  font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#terms {
+  display: inline-block;
+}
+
+#Termscoditons {
+  color: rgb(160, 63, 138);
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+#ref {
+  border-color: transparent;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#Warranty {
+  border-bottom-color: black;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  border-width: 0 0 0.0px 0;
+  font-size: 17px;
+
+}
+
+.warranty {
+  background-color: transparent;
+  height: 170px;
+  width: 300px;
+
+}
+#btns{
+  height: 40px;
+  width: 100px;
+  background-color: wheat;
+  border-color: transparent;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000;
+  font-weight: 600;
+
+  
+}
+#btns:hover{
+  background-color: rgb(240, 240, 159);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  color: blue;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+
+/* HTML CSS CODE */
+
+
+
+
+
+.header {
+  text-align: center;
+  /* Center align header content */
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  /* Align items to center */
+  position: relative;
+  /* Add positioning context */
+  /* Maintain height for header */
+  line-height: 1.;
+  /* Improve text alignment with logo */
+}
+
+.company-info {
+  flex: 1;
+  text-align: center;
+  /* Center align company information */
+}
+
+#logo {
+  position: absolute;
+  /* Set logo to absolute position */
+  left: 0px;
+  /* Give some margin from the left edge */
+  top: 17%;
+  /* Position logo at vertical center */
+  transform: translateY(-50%);
+  /* For proper vertical centering */
+  height: 40px;
+  /* Maintain current logo size */
+  width: auto;
+  /* Maintain aspect ratio */
+  vertical-align: left;
+  /* Ensure proper text alignment */
+}
+
+.company-info h1 {
+  margin: 0 auto;
+  /* Center the heading */
+  display: block;
+  /* Change from inline-block to block */
+  font-size: 27px;
+  /* Increase font size further */
+  text-align: center;
+  margin-bottom: 5px;
+  /* Add a bit of space below the heading */
+}
+
+.company-info p {
+  margin: 5px;
+  /* Remove margin from paragraphs */
+  text-align: center;
+  /* Center align paragraphs */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 5px;
+
+ 
+}
+
+.signature-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  /* Minimize top gap between signature and GST number */
+}
+
+#gst_no {
+  margin-top: 0;
+  /* Minimize top gap between GST number and signature div */
+}
+
+textarea {
+  overflow: hidden;
+  resize: none;
+}
+
+.terms ol {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  /* Minimize gaps between lines */
+  padding-left: 20px;
+  /* Adjust padding for list items */
+}
+
+.terms li {
+  margin-bottom: 5px;
+  /* Minimize gaps between list items */
+}
+
+.totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 0;
+}
+
+.totals .warranty {
+  flex: 1;
+  text-align: left;
+}
+
+.totals .amounts {
+  flex: 1;
+  text-align: right;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 0px 0px 1.5px;
+}
+
+.dotted-line {
+  border-top: 1px dotted #000;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.full-length-line {
+  border-top: 1px solid #000;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.centered-footer {
+  text-align: center;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+h2 {
+  margin: 5px 0;
+  /* Minimize gaps between lines */
+}
+
+.footer {
+  margin: 0;
+  /* Remove gap between footer and terms */
+}
+
+#Termscoditons {
+  margin: 0;
+  /* Remove gap between terms and conditions */
+}
+
+#Termscoditons h4 {
+  margin-top: 0;
+  /* Remove gap between h5 heading and upper line */
+}
+
+.totals,
+.signature-container {
+  margin-bottom: 0;
+  /* Remove gap between totals and signature container */
+}
+
+.warranty textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+  .invoice-container {
+    padding: 2px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    flex-direction: column;
+    padding-left: 0;
+    min-height: auto;
+    text-align: center;
+  }
+  
+  #logo {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 10px auto;
+    max-height: 60px;
+  }
+  
+  .company-info {
+    padding: 0 5px;
+  }
+  
+  .company-info h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .company-info p {
+    font-size: 12px;
+    margin: 2px;
+  }
+  
+  .quotation-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .quotation-table {
+    font-size: 12px;
+  }
+  
+  .quotation-table th,
+  .quotation-table td {
+    padding: 4px;
+  }
+  
+  /* Make the table responsive */
+  .quotation-table th:nth-child(3),
+  .quotation-table td:nth-child(3) {
+    display: none; /* Hide HSN CODE column on mobile */
+  }
+  
+  #qty, #unitPrice, 
+  .quotation-table th:nth-child(4),
+  .quotation-table th:nth-child(5),
+  .quotation-table td:nth-child(4),
+  .quotation-table td:nth-child(5) {
+    width: 50px; /* Make quantity and price columns narrower */
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #btns {
+    margin: 5px 0;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .totals {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .warranty, .amounts {
+    width: 100%;
+  }
+  
+  .signature-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .signature, #gst_no {
+    text-align: center;
+    width: 100%;
+  }
+  
+  #Termscoditons {
+    padding-left: 20px;
+  }
+  
+  #Termscoditons li {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  
+  .centered-footer {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+/* Even smaller screens */
+@media screen and (max-width: 480px) {
+  .company-info h1 {
+    font-size: 18px;
+  }
+  
+  .company-info p {
+    font-size: 10px;
+  }
+  
+  .quotation-table {
+    font-size: 10px;
+  }
+  
+  .quotation-table th,
+  .quotation-table td {
+    padding: 2px;
+  }
+}

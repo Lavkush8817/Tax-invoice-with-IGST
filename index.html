@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Quotation</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="header">
+            <img src="Anslogo.png" id="logo" alt="A&S Logo">
+            <div class="company-info">
+                <h1>A&S ENGINEERING SERVICES</h1>
+                <p>ADD-WARD NO 12, SAHOKHAR, KHUTAR, POST -KHUTAR, WAIDHAN SINGRAULI (MP)</p>
+                <p>PIN CODE 486886</p>
+                <p>PH: 7974694107 Email: A&Sengineering.wn24@gmail.com</p>
+            </div>
+        </div>
+        <div class="quotation">
+             <h2 id="h2"> TAX INVOICE</h2><hr id="quotation_bottum_line">
+            <div class="quotation-info">
+                <p>REF. NO :<input type="text" placeholder="EE/VJ/APRL-2024/01" id="ref"> </input></p>
+                <p>Date:<input id="date" type="date"></input></p>
+            </div>
+        </div>
+        <div class="customer-info">
+            <textarea id="customer-info" name="customer Details" placeholder="Enter your customer Details" required oninput="autoGrow(this)"></textarea><br>
+        </div>
+        <table class="quotation-table">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Description</th>
+                    <th>HSN CODE.</th>
+                    <th id="qty">Qty.</th>
+                    <th id="unitPrice">Unit Price</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="quotation-body">
+                <tr>
+                    <td>1</td>
+                    <td contenteditable="true">VAJRA ROCK BREAKER HD+ WITH PIPELINE AND ALL ASSOSEEERASE.</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true" oninput="calculateTotal()">1</td>
+                    <td contenteditable="true" oninput="calculateTotal()"></td>
+                    <td class="totalAmount">00000</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button id="btns" class="add-row-btn" onclick="addRow()">Add Row</button>
+            <button id="btns" class="remove-row-btn" onclick="removeRow()">Remove Row</button>
+            <button id="btns" class="print-btn" onclick="window.print()">Print</button>
+        </div>
+        <div class="totals">
+            <div class="warranty">
+                <textarea id="Warranty" placeholder="WARRANTY: One Year only. Warranty claim will be made only on manufacturing default."></textarea>
+            </div>
+            <div class="amounts">
+                <p><pre id="sub">Sub Total:  <span id="subTotal">00</pre></span></p>
+                <p>IGST: <input type="number" id="cgstRate" value="18" oninput="calculateTotal()" class="GST"> %</p>
+                
+    
+                <hr id="grand_total"> 
+                <p>Grand Total: <strong>₹ <span id="grandTotal">000</span></strong></p>
+            </div>
+        </div>
+        <div class="signature-container">
+            <div class="signature">
+                <p>For; A&S ENGINEERING SERVICES</p>
+                <p>Stamp / Authorized Signatory</p>
+                <img id="singh" src="singh.png"></img>
+            </div>
+            <div id="gst_no">
+                <p>GST No : 23CXLPD3404M1ZL</p>
+                <p>PAN No : CXLPD3404M</p>
+            </div>
+        </div>
+        <hr id="footer_line">
+        <div class="footer">
+            <ol id="Termscoditons">
+                <h4>Terms & Conditions:</h4>
+                <li>Taxes as stated, all other taxes and changes in tax structure by Government will be applicable at the time of billing.</li>
+                <li>Freight & Insurance: From Waid, Nagpur, Maharashtra to the site, both to be borne by the customer.</li>
+                <li>Delivery within 1-2 weeks from the date of receipt of DO, purchase order and full payment.</li>
+                <li>Our offer is valid for 15 days from the date of mentioned above, however prices ruling at the time of delivery shall be applicable to you.</li>
+                <li>100% Payment to be released prior to dispatch of equipment.</li>
+                <li>Pan No. & GST No. is required at the time of placement of order as per Govt. Rules.</li>
+                <li>Any dispute or claims out of this invoice will be subjected to the jurisdiction of court in Pune.</li>
+            </ol>
+        </div>
+        <div class="centered-footer">
+                <li id="list_point_eight">Payment to be made directly in Favour of<br> A&S ENGINEERING SERVICES UNION BANK OF INDIA,<br> ACCOUNT NUMBER: 452501010033664 BRANCH SANJAY NAGAR, SINGRAULI. IFSC: UBIN0545252</li>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function autoGrow(element) {
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight) + "px";
+        }
+    </script>
+</body>
+</html>
+
