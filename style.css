@@ -26,9 +26,9 @@ body {
   width: 210mm;
   min-height: 297mm;
   background: #fff;
-  border: 1px solid #bbb;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-  padding: 10mm 12mm 10mm 12mm;
+  border: 2px solid #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 8mm 10mm 10mm 10mm;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -38,9 +38,10 @@ body {
 .header {
   display: flex;
   align-items: center;
-  border-bottom: 3px solid #0d3b7a;
-  padding-bottom: 8px;
-  margin-bottom: 6px;
+  border-top: 2px solid #222;
+  border-bottom: 2px solid #222;
+  padding: 6px 0;
+  margin-bottom: 0;
   gap: 12px;
 }
 
@@ -74,19 +75,21 @@ body {
 
 /* ─── TAX INVOICE Title Band ─── */
 .quotation {
-  background: #0d3b7a;
-  color: #fff;
+  background: #fff;
+  color: #0d3b7a;
   text-align: center;
   padding: 5px 0;
-  margin: 6px 0;
+  margin: 0;
+  border-bottom: 1.5px solid #222;
+  border-top: 1.5px solid #222;
 }
 
 #h2 {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #fff;
+  color: #0d3b7a;
 }
 
 #quotation_bottum_line { display: none; }
@@ -96,11 +99,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 2px;
-  border-bottom: 1px solid #ccc;
+  padding: 5px 4px;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ─── Doc No Row ─── */
+.doc-info {
+  display: flex;
+  align-items: center;
+  padding: 4px 4px;
+  border-bottom: 1px solid #aaa;
   margin-bottom: 5px;
   font-size: 12px;
   font-weight: 500;
+}
+
+.doc-info input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #111;
 }
 
 .quotation-info input {
@@ -158,22 +182,22 @@ body {
 }
 
 .quotation-table thead tr {
-  background: #0d3b7a;
-  color: #fff;
+  background: #f0f0f0;
+  color: #111;
 }
 
 .quotation-table th {
-  border: 1px solid #0d3b7a;
+  border: 1px solid #555;
   padding: 7px 8px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 11.5px;
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
 .quotation-table td {
-  border: 1px solid #bbb;
+  border: 1px solid #888;
   padding: 6px 8px;
   vertical-align: middle;
   font-size: 12px;
@@ -209,19 +233,20 @@ body {
 #btns {
   height: 34px;
   padding: 0 16px;
-  background: #0d3b7a;
-  color: #fff;
-  border: none;
+  background: #c8a870;
+  color: #222;
+  border: 1.5px solid #a08040;
   border-radius: 4px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 12px;
   cursor: pointer;
   letter-spacing: 0.3px;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 #btns:hover {
-  background: #1756b3;
+  background: #b8964f;
+  border-color: #7a6030;
 }
 
 /* ─── Totals Section ─── */
@@ -294,6 +319,17 @@ body {
   padding: 1px 3px;
 }
 
+.amt-label {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.amt-value {
+  font-weight: 700;
+  text-align: right;
+  min-width: 60px;
+}
+
 #grand_total {
   border: none;
   border-top: 2px solid #0d3b7a;
@@ -346,8 +382,8 @@ body {
 /* ─── Footer Line ─── */
 #footer_line {
   border: none;
-  border-top: 2.5px solid #0d3b7a;
-  margin: 8px 0 4px;
+  border-top: 2px solid #222;
+  margin: 8px 0 0;
 }
 
 /* ─── Terms & Conditions ─── */
@@ -381,9 +417,9 @@ body {
 /* ─── Payment Footer ─── */
 .centered-footer {
   text-align: center;
-  border-top: 1px solid #0d3b7a;
-  padding-top: 6px;
-  margin-top: 8px;
+  border-top: 1.5px solid #222;
+  padding: 6px 8px 8px;
+  margin-top: 6px;
 }
 
 #list_point_eight {
@@ -438,15 +474,17 @@ textarea { overflow: hidden; resize: none; }
   .quotation-table thead tr {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    background: #0d3b7a !important;
-    color: #fff !important;
+    background: #f0f0f0 !important;
+    color: #111 !important;
   }
 
   .quotation {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    background: #0d3b7a !important;
-    color: #fff !important;
+    background: #fff !important;
+    color: #0d3b7a !important;
+    border-top: 1.5px solid #222 !important;
+    border-bottom: 1.5px solid #222 !important;
   }
 
   .quotation-table tbody tr:nth-child(even) {

@@ -33,6 +33,11 @@
       <p>Date:&nbsp;<input id="date" type="date"></p>
     </div>
 
+    <!-- ═══ DOC NO ═══ -->
+    <div class="doc-info">
+      <p>Doc. No :&nbsp;<input type="text" placeholder="DOC-001" id="docNo"></p>
+    </div>
+
     <!-- ═══ CUSTOMER INFO ═══ -->
     <div class="customer-info">
       <textarea id="customer-info" name="customerDetails"
@@ -79,18 +84,18 @@
       </div>
       <div class="amounts">
         <p>
-          <pre id="sub">Sub Total: </pre>
-          <span id="subTotal">0.00</span>
+          <span class="amt-label">Sub Total:</span>
+          <span id="subTotal" class="amt-value">0.00</span>
         </p>
         <p>
-          <span>IGST:</span>
-          <span>
-            <input type="number" id="cgstRate" value="18" oninput="calculateTotal()" class="GST"> %
+          <span class="amt-label">IGST:
+            <input type="number" id="igstRate" value="18" oninput="calculateTotal()" class="GST"> %
           </span>
+          <span id="igstAmount" class="amt-value">0.00</span>
         </p>
         <hr id="grand_total">
         <p>
-          <span>Grand Total:</span>
+          <span class="amt-label">Grand Total:</span>
           <strong>₹ <span id="grandTotal">0.00</span></strong>
         </p>
       </div>
@@ -128,9 +133,9 @@
     <!-- ═══ PAYMENT FOOTER ═══ -->
     <div class="centered-footer">
       <li id="list_point_eight">
-        Payment to be made directly in favour of A&amp;S ENGINEERING SERVICES<br>
-        UNION BANK OF INDIA | ACCOUNT NUMBER: 452501010033664<br>
-        BRANCH: SANJAY NAGAR, SINGRAULI &nbsp;|&nbsp; IFSC: UBIN0545252
+        Payment to be made directly in Favour of<br>
+        <strong>A&amp;S ENGINEERING SERVICES UNION BANK OF INDIA,</strong><br>
+        <strong>ACCOUNT NUMBER: 452501010033664 BRANCH SANJAY NAGAR, SINGRAULI. IFSC: UBIN0545252</strong>
       </li>
     </div>
 

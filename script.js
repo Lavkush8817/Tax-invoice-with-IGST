@@ -23,10 +23,14 @@ function calculateTotal() {
   document.getElementById("subTotal").innerText = subTotal.toFixed(2);
 
   // Get IGST rate from user input
-  let igstRate = parseFloat(document.getElementById("cgstRate").value) || 0;
+  let igstRate = parseFloat(document.getElementById("igstRate").value) || 0;
 
   // Calculate IGST amount
   let igstAmount = (subTotal * igstRate) / 100;
+
+  // Display IGST amount
+  let igstAmountEl = document.getElementById("igstAmount");
+  if (igstAmountEl) igstAmountEl.innerText = igstAmount.toFixed(2);
 
   // Calculate Grand Total
   let grandTotal = subTotal + igstAmount;
